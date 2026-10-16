@@ -1,0 +1,27 @@
+model,hidden,activation,lr,train_acc,val_acc
+"MLP relu, 64 hidden, lr 0.1",64,relu,0.1,0.9933,0.96
+"MLP relu, 32 hidden, lr 0.1",32,relu,0.1,0.9717,0.945
+"MLP tanh, 64 hidden, lr 0.01",64,tanh,0.01,0.9633,0.935
+"MLP tanh, 64 hidden, lr 0.1",64,tanh,0.1,0.9867,0.92
+"MLP tanh, 32 hidden, lr 0.1",32,tanh,0.1,0.9967,0.91
+"MLP relu, 64 hidden, lr 0.01",64,relu,0.01,0.93,0.87
+"MLP relu, 32 hidden, lr 0.01",32,relu,0.01,0.895,0.835
+"MLP tanh, 32 hidden, lr 0.01",32,tanh,0.01,0.8733,0.825
+"MLP tanh, 8 hidden, lr 0.1",8,tanh,0.1,0.8417,0.76
+"MLP tanh, 8 hidden, lr 0.01",8,tanh,0.01,0.6417,0.64
+"MLP relu, 2 hidden, lr 0.01",2,relu,0.01,0.625,0.61
+"MLP relu, 8 hidden, lr 0.1",8,relu,0.1,0.6217,0.6
+"MLP relu, 64 hidden, lr 0.001",64,relu,0.001,0.6183,0.6
+"MLP relu, 8 hidden, lr 0.01",8,relu,0.01,0.6183,0.585
+"MLP relu, 32 hidden, lr 0.001",32,relu,0.001,0.6333,0.585
+"MLP relu, 8 hidden, lr 0.001",8,relu,0.001,0.61,0.57
+"MLP tanh, 2 hidden, lr 0.1",2,tanh,0.1,0.5317,0.57
+"MLP relu, 2 hidden, lr 0.1",2,relu,0.1,0.5017,0.56
+Linear (no hidden layer),-,-,0.05,0.6217,0.55
+"Hidden layer, no activation",32,none,0.1,0.6217,0.55
+"MLP tanh, 8 hidden, lr 0.001",8,tanh,0.001,0.6233,0.55
+"MLP tanh, 64 hidden, lr 0.001",64,tanh,0.001,0.6267,0.55
+"MLP tanh, 2 hidden, lr 0.01",2,tanh,0.01,0.6033,0.545
+"MLP tanh, 2 hidden, lr 0.001",2,tanh,0.001,0.6167,0.54
+"MLP tanh, 32 hidden, lr 0.001",32,tanh,0.001,0.615,0.54
+"MLP relu, 2 hidden, lr 0.001",2,relu,0.001,0.615,0.535
