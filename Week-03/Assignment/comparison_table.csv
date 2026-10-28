@@ -1,0 +1,3 @@
+model,params,train_seconds,best_epoch,train_acc,val_acc,test_acc
+Small CNN,105866,108,10,0.9321,0.9062,0.9056
+Fully connected,105990,50,10,0.9169,0.8895,0.8824

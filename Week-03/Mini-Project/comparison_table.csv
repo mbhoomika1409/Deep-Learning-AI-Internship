@@ -1,0 +1,4 @@
+version,params,train_seconds,best_epoch,train_acc,val_acc,test_acc
+A. Plain CNN,421642,151,12,0.9817,0.9235,0.9197
+B. BatchNorm + Dropout,421834,752,11,0.9569,0.9278,0.9209
+C. B + augmentation,421834,2211,12,0.9152,0.9067,0.9028
