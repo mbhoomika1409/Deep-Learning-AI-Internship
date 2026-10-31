@@ -2,3 +2,6 @@ venv/
 data/
 __pycache__/
 .DS_Store
+
+# Week 4 dataset (downloaded by prepare_data.py)
+Week-04/Mini-Project/dataset/

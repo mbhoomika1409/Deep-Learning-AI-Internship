@@ -1,0 +1,104 @@
+{
+  "test_images": 352,
+  "test_accuracy_all_configs": {
+    "A_baseline": 0.6505681818181818,
+    "B_improved": 0.7954545454545454,
+    "C_improved_aug": 0.7272727272727273
+  },
+  "final_config": "B_improved",
+  "final_test_accuracy": 0.7954545454545454,
+  "per_class_accuracy": {
+    "cardboard": 0.7833333333333333,
+    "glass": 0.7162162162162162,
+    "metal": 0.9166666666666666,
+    "paper": 0.8850574712643678,
+    "plastic": 0.676056338028169
+  },
+  "confusion_matrix": [
+    [
+      47,
+      5,
+      6,
+      2,
+      0
+    ],
+    [
+      0,
+      53,
+      17,
+      1,
+      3
+    ],
+    [
+      0,
+      4,
+      55,
+      0,
+      1
+    ],
+    [
+      0,
+      4,
+      5,
+      77,
+      1
+    ],
+    [
+      1,
+      12,
+      5,
+      5,
+      48
+    ]
+  ],
+  "confidence_bins": [
+    {
+      "range": "0.0-0.5",
+      "images": 55,
+      "accuracy": 0.4727272727272727
+    },
+    {
+      "range": "0.5-0.7",
+      "images": 96,
+      "accuracy": 0.71875
+    },
+    {
+      "range": "0.7-0.9",
+      "images": 94,
+      "accuracy": 0.8936170212765957
+    },
+    {
+      "range": "0.9-1.0",
+      "images": 107,
+      "accuracy": 0.9439252336448598
+    }
+  ],
+  "overconfident_mistakes": 6,
+  "threshold_table": [
+    {
+      "threshold": 0.5,
+      "answered": 0.84375,
+      "accuracy_when_answered": 0.8552188552188552
+    },
+    {
+      "threshold": 0.6,
+      "answered": 0.7130681818181818,
+      "accuracy_when_answered": 0.8804780876494024
+    },
+    {
+      "threshold": 0.7,
+      "answered": 0.5710227272727273,
+      "accuracy_when_answered": 0.9203980099502488
+    },
+    {
+      "threshold": 0.8,
+      "answered": 0.4659090909090909,
+      "accuracy_when_answered": 0.9329268292682927
+    },
+    {
+      "threshold": 0.9,
+      "answered": 0.3039772727272727,
+      "accuracy_when_answered": 0.9439252336448598
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "images": 2390,
+  "distinct_photos": 2357,
+  "duplicates_removed": 23,
+  "conflicting_label_images": 10,
+  "dup_distance": 4,
+  "pairs_at_distance": {
+    "0": 5,
+    "2": 19,
+    "4": 28,
+    "8": 66
+  },
+  "leak_my_split_test": 0,
+  "leak_my_split_val": 0,
+  "leak_random_split_test": 7,
+  "random_test_size": 358,
+  "split_table": {
+    "train": {
+      "cardboard": 281,
+      "glass": 349,
+      "metal": 284,
+      "paper": 402,
+      "plastic": 335
+    },
+    "val": {
+      "cardboard": 60,
+      "glass": 75,
+      "metal": 61,
+      "paper": 86,
+      "plastic": 72
+    },
+    "test": {
+      "cardboard": 60,
+      "glass": 74,
+      "metal": 60,
+      "paper": 87,
+      "plastic": 71
+    }
+  },
+  "classes": [
+    "cardboard",
+    "glass",
+    "metal",
+    "paper",
+    "plastic"
+  ]
+}

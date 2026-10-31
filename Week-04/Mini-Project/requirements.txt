@@ -1,0 +1,9 @@
+torch
+torchvision
+gradio
+pillow
+numpy
+matplotlib
+scikit-learn
+imagehash
+huggingface_hub
