@@ -1,7 +1,8 @@
-"""Load the saved model and predict on new images.
+"""Load the saved models and predict on new images.
 
 Usage: python predict.py photo1.jpg photo2.jpg
 """
+import os
 import sys
 
 import torch
@@ -10,26 +11,46 @@ from PIL import Image
 from common import CLASSES, build_model, eval_tf
 
 MODEL_PATH = "waste_cnn.pth"
-_model = None
+CONFIGS = [("A_baseline", "A: Baseline CNN"),
+           ("B_improved", "B: Improved CNN (final)"),
+           ("C_improved_aug", "C: Improved CNN + augmentation")]
+_cache = {}
 
 
-def get_model():
-    global _model
-    if _model is None:
-        ckpt = torch.load(MODEL_PATH, map_location="cpu")
+def _load(path):
+    if path not in _cache:
+        ckpt = torch.load(path, map_location="cpu")
         model = build_model(ckpt["model_name"])
         model.load_state_dict(ckpt["state_dict"])
         model.eval()
-        _model = model
-    return _model
+        _cache[path] = model
+    return _cache[path]
+
+
+def get_model():
+    return _load(MODEL_PATH)
 
 
 @torch.no_grad()
-def predict(img):
-    """Return {class name: probability} for a PIL image (same preprocessing as training)."""
-    x = eval_tf(img.convert("RGB")).unsqueeze(0)
-    probs = torch.softmax(get_model()(x), dim=1)[0]
+def _scores(model, img):
+    x = eval_tf(img.convert("RGB")).unsqueeze(0)   # same preprocessing as training
+    probs = torch.softmax(model(x), dim=1)[0]
     return {c: float(probs[i]) for i, c in enumerate(CLASSES)}
+
+
+def predict(img):
+    """{class: score} from the final model (waste_cnn.pth)."""
+    return _scores(get_model(), img)
+
+
+def predict_all(img):
+    """{model title: {class: score}} for the baseline, improved and augmented models."""
+    out = {}
+    for name, title in CONFIGS:
+        path = f"checkpoints/{name}.pth"
+        if os.path.exists(path):
+            out[title] = _scores(_load(path), img)
+    return out
 
 
 if __name__ == "__main__":
